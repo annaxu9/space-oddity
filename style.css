@@ -41,12 +41,13 @@ body {
     background-blend-mode: multiply;
     border-radius: 50%; /* Circular shape */
     box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.5);
-    transition: background-color 10s; /* Transition effect over 10 seconds */
+    transition: background-color 10s, box-shadow 10s;
 }
 
 /* This class will be added via JavaScript */
 .planet-red-overlay {
     background-color: red;
+    box-shadow: 0 0 40px 30px rgba(255, 2, 2, 0.85);
 }
 
 .heart {
