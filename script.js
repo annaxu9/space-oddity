@@ -28,6 +28,33 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
 document.addEventListener('keydown', function() {
+
+    if (event.key === "b") {
+        console.log("hello")
+        const blackOverlay = document.querySelector('.black-overlay');
+        console.log(blackOverlay.style.opacity);
+        if (blackOverlay.style.opacity === "" || blackOverlay.style.opacity === "1") {
+            blackOverlay.style.opacity = "0";
+        } else {
+            blackOverlay.style.opacity = "1";
+        }
+    }
+    if (event.key === "f") {
+        // Request fullscreen for a specific element or document.documentElement for the whole page
+        var element = document.documentElement;  // This line can change depending on the element you want to fullscreen
+
+        // Check if the browser can enter fullscreen mode (cross-browser support)
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) { /* Firefox */
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { /* IE/Edge */
+            element.msRequestFullscreen();
+        }
+    }
+
     if (event.key === "h") {
         const container = document.getElementById('heartsContainer');
         container.innerHTML = ''; // Clear previous hearts
@@ -61,3 +88,5 @@ document.addEventListener('keydown', function() {
     }
 
 });
+
+
